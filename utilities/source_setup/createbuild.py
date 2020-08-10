@@ -30,7 +30,7 @@ def main(argv):
     os.makedirs(buildir)
 
     for repo in config['repos']:
-        print 'Copying libraries for' , repo['name']
+        print('Copying libraries for' , repo['name'])
         targetdir = os.path.join(sourcesdir, repo['name'], 'target')
 
         copyext(targetdir, 'jar')
@@ -45,7 +45,7 @@ def main(argv):
     zipdir(buildir, zipf)
     zipf.close()
     shutil.rmtree(buildir, ignore_errors=True)     
-    print 'Geppetto build created at ' + buildir
+    print('Geppetto build created at ' + buildir)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
